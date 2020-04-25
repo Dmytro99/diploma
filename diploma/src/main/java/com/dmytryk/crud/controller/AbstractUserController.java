@@ -2,7 +2,6 @@ package com.dmytryk.crud.controller;
 
 import com.dmytryk.crud.controller.model.UserDtoModel;
 import com.dmytryk.crud.dto.UserDto;
-import com.dmytryk.crud.entry.User;
 import com.dmytryk.crud.entry.UserResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -53,7 +52,7 @@ public abstract class AbstractUserController {
       @RequestBody @Valid UserDto userDto);
 
   @MessageMapping("/socket")
-  @SendTo("/topic/user")
-  public abstract UserResponse getUserWebSocket(User user);
+  @SendTo("/topic/socket")
+  public abstract UserResponse getUserWebSocket(String name);
 
 }

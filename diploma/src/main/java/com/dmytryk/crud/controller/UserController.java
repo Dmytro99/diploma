@@ -3,7 +3,6 @@ package com.dmytryk.crud.controller;
 import com.dmytryk.crud.controller.assembler.UserModelAssembler;
 import com.dmytryk.crud.controller.model.UserDtoModel;
 import com.dmytryk.crud.dto.UserDto;
-import com.dmytryk.crud.entry.User;
 import com.dmytryk.crud.entry.UserResponse;
 import com.dmytryk.crud.service.UserService;
 import com.dmytryk.crud.validators.EmailValidator;
@@ -70,7 +69,7 @@ public class UserController extends AbstractUserController {
   }
 
   @Override
-  public UserResponse getUserWebSocket(User user) {
-    return new UserResponse("Hi " + user.getUserId());
+  public UserResponse getUserWebSocket(String name) {
+    return new UserResponse("Hi " + name.toString());
   }
 }
